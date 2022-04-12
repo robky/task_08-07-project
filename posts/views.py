@@ -31,7 +31,7 @@ def api_posts_detail(request, pk):
 
     # получаем пользователя из запроса
     if request.user != post.author:
-        Response(status=status.HTTP_403_FORBIDDEN)
+        return Response(status=status.HTTP_403_FORBIDDEN)
     # если пользователь, обратившийся к API, не является автором поста,
     # то к методам, идущим после GET, мы его не пропускаем
     # и возвращаем ответ со статусом 403
